@@ -4,32 +4,55 @@ from excepciones import (
     ReservaError
 )
 
+print("========== INICIO DEL SISTEMA ==========\n")
 
-print("=== INICIO DEL SISTEMA ===")
 
+# ---------------------------------------------------
+# PRUEBA 1: Validación de cliente
+# ---------------------------------------------------
 
-# PRUEBA 1: Error de cliente
 try:
+    print("Verificando información del cliente...")
     raise ClienteInvalidoError()
 
 except ClienteInvalidoError as error:
-    print(f"Error detectado: {error}")
+    print(f"Se detectó un problema: {error}")
+
+else:
+    print("Cliente registrado correctamente.")
+
+finally:
+    print("Finalizó la validación del cliente.\n")
 
 
-# PRUEBA 2: Error de servicio
+# ---------------------------------------------------
+# PRUEBA 2: Validación de servicio
+# ---------------------------------------------------
+
 try:
+    print("Consultando disponibilidad del servicio...")
     raise ServicioNoDisponibleError()
 
 except ServicioNoDisponibleError as error:
-    print(f"Error detectado: {error}")
+    print(f"Se detectó un problema: {error}")
+
+finally:
+    print("Finalizó la validación del servicio.\n")
 
 
-# PRUEBA 3: Error de reserva
+# ---------------------------------------------------
+# PRUEBA 3: Procesamiento de reserva
+# ---------------------------------------------------
+
 try:
+    print("Procesando reserva...")
     raise ReservaError()
 
 except ReservaError as error:
-    print(f"Error detectado: {error}")
+    print(f"Se detectó un problema: {error}")
+
+finally:
+    print("Finalizó el procesamiento de la reserva.\n")
 
 
-print("=== EL SISTEMA SIGUE FUNCIONANDO ===")
+print("========== EL SISTEMA SIGUE FUNCIONANDO ==========")
